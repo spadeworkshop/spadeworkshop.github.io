@@ -22,6 +22,38 @@
       font-weight: 700 !important;
     }
   </style>
+
+  <style>
+    .paper {
+      padding: 1.5em;
+      margin-bottom: 1em;
+      border-left: 3px solid #eee;
+      transition: border-left-color 0.2s ease;
+    }
+    .paper:hover {
+      border-left-color: #2c3e50;
+    }
+    .paper h4 {
+      color: #2c3e50;
+      margin: 0;
+      font-size: 1.1em;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .paper .authors {
+      color: #666;
+      margin: 0.5em 0 0 0;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+    .paper-list {
+      max-width: 900px;
+      margin: 2em auto;
+    }
+    hr {
+      margin-bottom: 2em;
+    }
+  </style>
 </head>
 
 <body>
@@ -65,6 +97,7 @@
         <div class="flex-row">
           <div class="flex-item flex-column full-width">
             <h3>List of Accepted Papers</h3>
+            <hr>
             
             <div class="paper-list">
               <div class="paper">
@@ -117,38 +150,6 @@
                 <p class="authors">Karl El Hajal, Enno Hermann, Ajinkya Kulkarni, Mathew Magimai.-Doss</p>
               </div>
             </div>
-    
-            <style>
-              .paper {
-                padding: 1.5em;
-                margin-bottom: 1em;
-                border-left: 3px solid #eee;
-                transition: border-left-color 0.2s ease;
-              }
-              .paper:hover {
-                border-left-color: #2c3e50;
-              }
-              .paper h4 {
-                color: #2c3e50;
-                margin: 0;
-                font-size: 1.1em;
-                font-weight: 600;
-                line-height: 1.4;
-              }
-              .paper .authors {
-                color: #666;
-                margin: 0.5em 0 0 0;
-                font-size: 0.95em;
-                line-height: 1.5;
-              }
-              .paper-list {
-                max-width: 900px;
-                margin: 2em auto;
-              }
-              hr {
-                margin-bottom: 2em;
-              }
-            </style>
           </div>
         </div>
       </div>
