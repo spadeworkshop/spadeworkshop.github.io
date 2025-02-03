@@ -158,35 +158,74 @@
       </div>
     </div>
 
+
     <div class="banner" id="keynotes">
       <div class="banner-table flex-column">
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2 class="add-top-margin-small">Keynotes</h2>
+            <h2 class="add-top-margin-small">Keynote</h2>
           </div>
         </div>
       </div>
     </div>
+
     <div class="content">
       <div class="content-table flex-column">
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <p class="text">
-              The keynote speaker for the SPADE workshop will be announced soon.
-            </p>
-            <!-- <h3 id="keynote">Author - Talk title...</h3>
-            <hr>
-            <p class="text">
-              <img class="image image-wrap-text-custom max-width-200" src="img/placeholder.jpg">
-              Talk abstract: ...
-            </p>
-            <p class="text">
-              Short bio: ...
-            </p> -->
+            <div class="keynote-container" style="max-width: 900px; margin: 0 auto;">
+              <!-- Talk Information -->
+              <div class="keynote-header" style="margin-bottom: 2em; border-bottom: 3px solid #eee; padding-bottom: 1em;">
+                <div style="color: #666; font-size: 1.2em;">
+                  <span style="font-weight: 600;">Speaker:</span> Mark A. Hasegawa-Johnson
+                </div>
+              </div>
+    
+              <!-- Speaker Info Grid -->
+              <div style="display: grid; gap: 2em; grid-template-columns: 1fr; margin-bottom: 2em;">
+                <!-- Image and Bio -->
+                <div class="keynote-bio" style="display: grid; gap: 2em; grid-template-columns: minmax(200px, 1fr) 3fr; align-items: start;">
+                  <div class="speaker-image" style="position: relative;">
+                    <img src="img/hasegawa-johnson2024jul31.jpg" alt="Mark A. Hasegawa-Johnson" 
+                         style="width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                  </div>
+                  <div class="speaker-bio" style="background: #f8f9fa; padding: 1.5em; border-radius: 4px;">
+                    <p style="margin: 0; line-height: 1.6; color: #444;">
+                      Mark A. Hasegawa-Johnson is the M.E. Van Valkenburg Professor of Electrical and Computer Engineering at the University of Illinois at Urbana-Champaign.  His research converts facts about speech production into low-resource transfer learning algorithms that can be used to make speech technology more fair, more inclusive, and more accessible. Dr. Hasegawa-Johnson is a Fellow of the IEEE, of the Acoustical Society of America, and of the International Speech Communication Association, and he is currently Editor in Chief of the IEEE Transactions on Audio, Speech, and Language Processing.
+                    </p>
+                  </div>
+                </div>
+    
+                <!-- Talk Abstract -->
+                <div class="keynote-abstract" style="background: #fff; padding: 1.5em; border-left: 4px solid #2c3e50; margin-top: 1em;">
+                  <h3 style="color: #2c3e50; margin: 0 0 0.5em 0;">The Speech Accessibility Project: Description of the Corpus and Status of the Project</h3>
+                  <p style="margin: 0; line-height: 1.6; color: #444;">
+                    Automatic speech recognition (ASR) for atypical speech has lagged ASR for typical speech because training datasets are small.  People with atypical speech may benefit from better ASR, but in most cases, the potential benefit does not justify loss of privacy, uncompensated labor, or the provision to researchers of unearned trust.  The Speech Accessibility Project has established a very simple legal framework to guarantee participant privacy, a very simple compensation system to make sure participants are reasonably compensated for their time, and most important, a network of trusted partners who can help us to establish relationships of trust with potential dataset contributors.  As of January 2025 the project has recorded approximately 1000 hours of speech from 1532 people with atypical speech as a correlate of Parkinson's disease, amyotrophic lateral sclerosis, cerebral palsy, Down syndrome, or stroke, and active recruitment continues in the latter four etiologies.  Data from 424 of these people (primarily people with Parkinson's) has been made available to 61 organizations with proposed uses that advance accessibility, including 15 organizations who participated in the first annual Speech Accessibility Project Challenge Competition.  The vast majority of speech in the competition dataset exhibits the mild hypokinetic dysarthria that is a widely recognized symptom of Parkinson's disease, and which is characterized by breathy voice quality, monopitch and monoloudness, and articulatory reduction.  Small subsets of the speech with a reported etiology of Parkinson's disease are characterized by patterns of speech that have not been widely reported to be correlates of Parkinson's, including speech with extreme stuttering (more than a dozen repetitions of a single syllable), extremely low speech rate (three seconds per syllable), and extremely high speech rate (fifteen syllables per second).  Data with speech patterns characteristic of other etiologies is now starting to be made available to researchers, as manual verification completes.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    
+    <style>
+    @media (max-width: 768px) {
+      .keynote-bio {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .speaker-image {
+        max-width: 250px;
+        margin: 0 auto;
+      }
+      
+      .keynote-abstract {
+        margin-top: 1.5em;
+      }
+    }
+    </style>
 
     <div class="banner" id="awards">
       <div class="banner-table flex-column">
