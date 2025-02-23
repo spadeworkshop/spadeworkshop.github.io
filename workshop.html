@@ -53,6 +53,56 @@
     hr {
       margin-bottom: 2em;
     }
+
+    .time-slot:hover {
+      border-left-color: #2c3e50;
+    }
+    
+    @media (max-width: 768px) {
+      .program-schedule {
+        margin: 1em;
+      }
+      
+      .time-slot {
+        padding: 1em;
+      }
+    }
+
+    .paper-compact {
+      padding: 0.75em;
+      margin-bottom: 0.5em;
+      border-left: 3px solid #eee;
+      transition: border-left-color 0.2s ease;
+    }
+    .paper-compact:hover {
+      border-left-color: #2c3e50;
+    }
+    .paper-compact h4 {
+      color: #2c3e50;
+      margin: 0;
+      font-size: 1em;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .paper-compact .authors {
+      color: #666;
+      margin: 0.2em 0 0 0;
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+    .paper-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1em;
+      max-width: 900px;
+      margin: 1em auto;
+    }
+    
+    @media (max-width: 768px) {
+      .paper-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -88,7 +138,66 @@
               <br>
               The workshop will take place on April 7th, 2025 - <b>afternoon session from 14:00 to 17:30</b>.
               <br>
-              The detailed program will be available on this page as soon as it is finalized.
+              
+              <div class="program-schedule" style="max-width: 900px; margin: 2em auto;">
+                <div style="display: grid; gap: 0.5em;">
+                  <div class="time-slot" style="display: grid; grid-template-columns: 120px 1fr; gap: 1em; padding: 0.75em; border-left: 3px solid #eee;">
+                    <div style="color: #2c3e50; font-weight: 600;">14:00 - 14:10</div>
+                    <div style="color: #666;">Opening Remarks</div>
+                  </div>
+              
+                  <div class="time-slot" style="display: grid; grid-template-columns: 120px 1fr; gap: 1em; padding: 0.75em; border-left: 3px solid #eee;">
+                    <div style="color: #2c3e50; font-weight: 600;">14:10 - 15:00</div>
+                    <div>
+                      <div style="color: #666;">Keynote: The Speech Accessibility Project</div>
+                      <div style="color: #888; font-size: 0.9em;">Mark A. Hasegawa-Johnson</div>
+                    </div>
+                  </div>
+              
+                  <div class="time-slot" style="display: grid; grid-template-columns: 120px 1fr; gap: 1em; padding: 0.75em; border-left: 3px solid #eee;">
+                    <div style="color: #2c3e50; font-weight: 600;">15:00 - 15:15</div>
+                    <div>
+                      <div style="color: #666;">Investigating Effects of Diffusion-based Conditional Generative Speech Models Used for Speech Enhancement on Dysarthric Speech</div>
+                      <div style="color: #888; font-size: 0.9em;">Joanna Reszka et al.</div>
+                    </div>
+                  </div>
+              
+                  <div class="time-slot" style="display: grid; grid-template-columns: 120px 1fr; gap: 1em; padding: 0.75em; border-left: 3px solid #eee;">
+                    <div style="color: #2c3e50; font-weight: 600;">15:15 - 15:30</div>
+                    <div>
+                      <div style="color: #666;">Investigating the Effectiveness of Explainability Methods in Parkinson's Detection from Speech</div>
+                      <div style="color: #888; font-size: 0.9em;">Eleonora Mancini et al.</div>
+                    </div>
+                  </div>
+              
+                  <div class="time-slot" style="display: grid; grid-template-columns: 120px 1fr; gap: 1em; padding: 0.75em; border-left: 3px solid #eee; background-color: #f8f9fa;">
+                    <div style="color: #2c3e50; font-weight: 600;">15:30 - 16:30</div>
+                    <div style="color: #666;">Coffee Break & Poster Session</div>
+                  </div>
+              
+                  <div class="time-slot" style="display: grid; grid-template-columns: 120px 1fr; gap: 1em; padding: 0.75em; border-left: 3px solid #eee;">
+                    <div style="color: #2c3e50; font-weight: 600;">16:30 - 16:45</div>
+                    <div>
+                      <div style="color: #666;">Speech-Based Estimation of Schizophrenia Severity Using Feature Fusion</div>
+                      <div style="color: #888; font-size: 0.9em;">Gowtham Premananth et al.</div>
+                    </div>
+                  </div>
+              
+                  <div class="time-slot" style="display: grid; grid-template-columns: 120px 1fr; gap: 1em; padding: 0.75em; border-left: 3px solid #eee;">
+                    <div style="color: #2c3e50; font-weight: 600;">16:45 - 17:00</div>
+                    <div>
+                      <div style="color: #666;">Unsupervised Rhythm and Voice Conversion of Dysarthric to Healthy Speech for ASR</div>
+                      <div style="color: #888; font-size: 0.9em;">Karl El Hajal et al.</div>
+                    </div>
+                  </div>
+              
+                  <div class="time-slot" style="display: grid; grid-template-columns: 120px 1fr; gap: 1em; padding: 0.75em; border-left: 3px solid #eee;">
+                    <div style="color: #2c3e50; font-weight: 600;">17:00 - 17:30</div>
+                    <div style="color: #666;">Awards Ceremony & Closing Remarks</div>
+                  </div>
+                </div>
+              </div>
+
             </p>
           </div>
         </div>
@@ -99,60 +208,61 @@
       <div class="content-table flex-column">
         <div class="flex-row">
           <div class="flex-item flex-column full-width">
+
             <h3>List of Accepted Papers</h3>
-            <hr>
-            
-            <div class="paper-list">
-              <div class="paper">
-                <h4>Pathological Voice Detection From Neutral Vowels: Handcrafted vs. Self-supervised Learning</h4>
+
+            <div class="paper-grid">
+              <div class="paper-compact">
+                <h4>Pathological Voice Detection From Neutral Vowels</h4>
                 <p class="authors">Bagus Tris Atmaja, Akira Sasou</p>
               </div>
-    
-              <div class="paper">
-                <h4>Speech-based Clinical Depression Screening: An Empirical Study</h4>
-                <p class="authors">Yangbin Chen, Chenyang Xu, Chunfeng Liang, Yanbao Tao, Chuan Shi</p>
+            
+              <div class="paper-compact">
+                <h4>Speech-based Clinical Depression Screening</h4>
+                <p class="authors">Yangbin Chen et al.</p>
               </div>
-    
-              <div class="paper">
-                <h4>Parkinson's Disease Detection Using Wavelet Packet Absolute Amplitude Deviation (WPAAD) from voice signals</h4>
-                <p class="authors">Pandit Vivek Pandey, Sitanshu Sekhar Sahu, Biswajit Karan, Juan Rafael Orozco-Arroyave</p>
+            
+              <div class="paper-compact">
+                <h4>Parkinson's Disease Detection Using WPAAD</h4>
+                <p class="authors">Pandit Vivek Pandey et al.</p>
               </div>
-    
-              <div class="paper">
-                <h4>Enhancing and Exploring Mild Cognitive Impairment Detection with W2V-BERT-2.0</h4>
-                <p class="authors">Yueguan Wang, Tatsunari Matsushima, Soichiro Matsushima, Toshimitsu Sakai</p>
+            
+              <div class="paper-compact">
+                <h4>MCI Detection with W2V-BERT-2.0</h4>
+                <p class="authors">Yueguan Wang et al.</p>
               </div>
-    
-              <div class="paper">
-                <h4>Speech-Based Estimation of Schizophrenia Severity Using Feature Fusion</h4>
+            
+              <div class="paper-compact">
+                <h4>Speech-Based Estimation of Schizophrenia Severity</h4>
                 <p class="authors">Gowtham Premananth, Carol Espy-Wilson</p>
               </div>
-    
-              <div class="paper">
-                <h4>Investigating the Effectiveness of Explainability Methods in Parkinson's Detection from Speech</h4>
-                <p class="authors">Eleonora Mancini, Francesco Paissan, Paolo Torroni, Mirco Ravanelli, Cem Subakan</p>
+            
+              <div class="paper-compact">
+                <h4>Explainability Methods in Parkinson's Detection</h4>
+                <p class="authors">Eleonora Mancini et al.</p>
               </div>
-    
-              <div class="paper">
-                <h4>Prosody Disentanglement with Self-Supervised Speech Representation for Detecting Depression</h4>
-                <p class="authors">Bubai Maji, Rajlakshmi Guha, Aurobinda Routray, Shazia Nasreen, Debabrata Majumdar</p>
+            
+              <div class="paper-compact">
+                <h4>Prosody Disentanglement for Depression Detection</h4>
+                <p class="authors">Bubai Maji et al.</p>
               </div>
-    
-              <div class="paper">
-                <h4>Investigating Effects of Diffusion-based Conditional Generative Speech Models Used for Speech Enhancement on Dysarthric Speech</h4>
-                <p class="authors">Joanna Reszka, Parvaneh Janbakhshi, Tilak Purohit, Sadegh Mohammadi</p>
+            
+              <div class="paper-compact">
+                <h4>Diffusion Models for Dysarthric Speech Enhancement</h4>
+                <p class="authors">Joanna Reszka et al.</p>
               </div>
-    
-              <div class="paper">
-                <h4>Exploring the Complexity of Parkinson's Patient Speech for Depression Detection task: A Qualitative Analysis</h4>
-                <p class="authors">Barbara Ruvolo, Tilak Purohit, Bogdan Vlasenko, Juan Rafael Orozco-Arroyave, Mathew Magimai.-Doss</p>
+            
+              <div class="paper-compact">
+                <h4>Parkinson's Speech Complexity for Depression Detection</h4>
+                <p class="authors">Barbara Ruvolo et al.</p>
               </div>
-    
-              <div class="paper">
-                <h4>Unsupervised Rhythm and Voice Conversion of Dysarthric to Healthy Speech for ASR</h4>
-                <p class="authors">Karl El Hajal, Enno Hermann, Ajinkya Kulkarni, Mathew Magimai.-Doss</p>
+            
+              <div class="paper-compact">
+                <h4>Rhythm and Voice Conversion of Dysarthric Speech</h4>
+                <p class="authors">Karl El Hajal et al.</p>
               </div>
             </div>
+            
           </div>
         </div>
       </div>
