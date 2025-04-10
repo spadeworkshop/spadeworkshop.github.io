@@ -103,6 +103,133 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Carousel Styles */
+    .carousel-container {
+      max-width: 900px;
+      margin: 2em auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .carousel-slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 400px;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f9fa;
+    }
+    .carousel-slide img {
+      max-width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+    }
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+    .carousel-btn {
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 0 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .carousel-btn:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+    }
+    .carousel-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .carousel-indicator.active {
+      background-color: white;
+    }
+    .award-paper {
+      background-color: #f8f9fa;
+      padding: 1.5em;
+      border-left: 4px solid #2c3e50;
+      margin: 1em 0;
+      border-radius: 4px;
+    }
+    .award-paper h4 {
+      color: #2c3e50;
+      margin: 0 0 0.5em 0;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+    .award-paper .authors {
+      color: #666;
+      font-size: 1em;
+      margin-bottom: 0.5em;
+    }
+    .award-paper .link {
+      display: inline-block;
+      margin-top: 0.5em;
+      color: #3498db;
+      text-decoration: none;
+    }
+    .award-paper .link:hover {
+      text-decoration: underline;
+    }
+    
+    /* Loading indicator for the carousel */
+    .loading-spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-left-color: #3498db;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 30px auto;
+    }
+    
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .photo-status {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-style: italic;
+    }
   </style>
 </head>
 
@@ -337,6 +464,36 @@
     }
     </style>
 
+    <!-- Photo Gallery Section -->
+    <div class="banner" id="photos">
+      <div class="banner-table flex-column">
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 class="add-top-margin-small">Workshop Photos</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="content-table flex-column">
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <div class="carousel-container">
+              <div id="photo-loading" class="loading-spinner"></div>
+              <div id="photo-status" class="photo-status" style="display: none;"></div>
+              <div class="carousel-slides" id="carousel-slides" style="display: none;"></div>
+              <div class="carousel-nav" style="display: none;">
+                <button class="carousel-btn" id="prev-btn">&lt;</button>
+                <button class="carousel-btn" id="next-btn">&gt;</button>
+              </div>
+              <div class="carousel-indicators" id="carousel-indicators" style="display: none;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="banner" id="awards">
       <div class="banner-table flex-column">
         <div class="flex-row">
@@ -352,16 +509,17 @@
           <div class="flex-item flex-column">
             <h3 id="award-bestpaper">Best Paper Award</h3>
             <hr>
+            <div class="award-paper">
+              <h4>Investigating Effects of Diffusion-based Conditional Generative Speech Models Used for Speech Enhancement on Dysarthric Speech</h4>
+              <p class="authors">Joanna Reszka, Parvaneh Janbakhshi, Tilak Purohit, Sadegh Mohammadi</p>
+              <a href="https://arxiv.org/abs/2412.13933" class="link" target="_blank">View paper on arXiv</a>
+            </div>
             <p class="text">
-              The workshop will feature a best paper award to recognize the most outstanding paper presented at the workshop. The program committee will evaluate all papers based on their originality, technical quality, and relevance to the workshop topics.
+              The best paper award recognizes the most outstanding paper presented at the workshop. The program committee evaluated all papers based on their originality, technical quality, and relevance to the workshop topics.
             </p>
             <p class="text">
-              The best paper award will be determined using a combination of the review scores and the presentation quality. The award will be presented to the authors of the paper that receives the highest overall score. 
-              The best paper award will be announced during the closing session of the workshop and reported in this section.
+              The award was determined using a combination of the review scores and the presentation quality. Congratulations to the team for their contribution.
             </p>
-            <!-- <p class="text">
-              <img class="image" style="max-width:512px;" src="img/awards/bestpaper.png">
-            </p> -->
           </div>
         </div>
       </div>
@@ -369,6 +527,272 @@
 
   </div>
   <div class="footer-container"></div>
+
+  <!-- Script for the photo carousel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const photoDirectory = 'wksp-photos';
+      const photoIndexFile = `${photoDirectory}/photos.json`;
+      
+      const slidesContainer = document.getElementById('carousel-slides');
+      const indicatorsContainer = document.getElementById('carousel-indicators');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const loadingSpinner = document.getElementById('photo-loading');
+      const photoStatus = document.getElementById('photo-status');
+      
+      let currentSlide = 0;
+      let slideInterval;
+      let photos = [];
+      
+      // Try to load the photo index file first
+      fetch(photoIndexFile)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Photos index not found, trying folder scan');
+          }
+          return response.json();
+        })
+        .then(data => {
+          // If we have a valid photos.json file
+          if (Array.isArray(data) && data.length > 0) {
+            photos = data.map(filename => `${photoDirectory}/${filename}`);
+            initializeCarousel(photos);
+          } else {
+            // If the JSON file exists but doesn't contain valid data
+            scanForPhotos();
+          }
+        })
+        .catch(error => {
+          console.log('Photo index error:', error);
+          // Try the folder scan approach as fallback
+          scanForPhotos();
+        });
+      
+      // Function to scan for photos in the directory by iteratively trying common image extensions
+      function scanForPhotos() {
+        const extensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
+        let foundPhotos = [];
+        let promises = [];
+        
+        // First, try some common naming patterns
+        const commonPatterns = [
+          // Try numbered files (photo1.jpg, photo2.jpg, etc.)
+          ...Array.from({length: 20}, (_, i) => `photo${i+1}`),
+          // Try date-based filenames (useful for event photos)
+          ...Array.from({length: 20}, (_, i) => `img_${i+1}`),
+          // Try SPADE-specific names
+          ...Array.from({length: 20}, (_, i) => `spade_${i+1}`),
+          // Try descriptive names
+          ...Array.from({length: 20}, (_, i) => `workshop_${i+1}`),
+          // Try camera default names
+          ...Array.from({length: 20}, (_, i) => `IMG_${i+1}`),
+          ...Array.from({length: 20}, (_, i) => `DSC_${i+1}`)
+        ];
+        
+        // For each possible filename and extension combination, check if the file exists
+        for (const pattern of commonPatterns) {
+          for (const ext of extensions) {
+            const path = `${photoDirectory}/${pattern}${ext}`;
+            const promise = fetch(path, { method: 'HEAD' })
+              .then(response => {
+                if (response.ok) {
+                  foundPhotos.push(path);
+                }
+              })
+              .catch(() => {
+                // Ignore 404 errors, this is expected for files that don't exist
+              });
+            promises.push(promise);
+          }
+        }
+        
+        // When all fetch attempts are done
+        Promise.all(promises)
+          .then(() => {
+            // Sort the photos by filename to ensure correct order
+            foundPhotos.sort();
+            
+            if (foundPhotos.length > 0) {
+              photos = foundPhotos;
+              initializeCarousel(photos);
+            } else {
+              // No photos found, show a message
+              loadingSpinner.style.display = 'none';
+              photoStatus.style.display = 'block';
+              photoStatus.textContent = 'No workshop photos available yet. Check back soon!';
+              
+              // Create a photos.json template to help the user
+              console.log('No photos found. Create a photos.json file in the wksp-photos directory with a list of your image filenames.');
+              console.log('Example photos.json content:');
+              console.log('["photo1.jpg", "photo2.jpg", "photo3.jpg"]');
+            }
+          });
+      }
+      
+      // Function to initialize the carousel with the given image paths
+      function initializeCarousel(imagePaths) {
+        // Hide loading spinner
+        loadingSpinner.style.display = 'none';
+        
+        // If no photos were found
+        if (imagePaths.length === 0) {
+          photoStatus.style.display = 'block';
+          photoStatus.textContent = 'No workshop photos available yet. Check back soon!';
+          return;
+        }
+        
+        // Show carousel elements
+        slidesContainer.style.display = 'flex';
+        document.querySelector('.carousel-nav').style.display = 'flex';
+        indicatorsContainer.style.display = 'flex';
+        
+        // Clear any existing content
+        slidesContainer.innerHTML = '';
+        indicatorsContainer.innerHTML = '';
+        
+        // Create slides and indicators
+        imagePaths.forEach((path, index) => {
+          // Create slide
+          const slide = document.createElement('div');
+          slide.className = 'carousel-slide';
+          
+          // Create image with loading handling
+          const img = document.createElement('img');
+          img.src = path;
+          img.alt = `Workshop Photo ${index + 1}`;
+          img.onerror = function() {
+            // If image fails to load, replace with a placeholder
+            this.src = 'img/placeholder.jpg';
+            this.alt = 'Image not available';
+          };
+          
+          slide.appendChild(img);
+          slidesContainer.appendChild(slide);
+          
+          // Create indicator
+          const indicator = document.createElement('div');
+          indicator.className = 'carousel-indicator' + (index === 0 ? ' active' : '');
+          indicator.dataset.index = index;
+          indicator.addEventListener('click', () => goToSlide(index));
+          indicatorsContainer.appendChild(indicator);
+        });
+        
+        // Update the slides transform to show the current slide
+        function updateSlides() {
+          slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+          
+          // Update indicators
+          document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+          });
+        }
+        
+        // Go to a specific slide
+        function goToSlide(index) {
+          currentSlide = index;
+          updateSlides();
+        }
+        
+        // Event listeners for buttons
+        prevBtn.addEventListener('click', () => {
+          currentSlide = (currentSlide - 1 + imagePaths.length) % imagePaths.length;
+          updateSlides();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+          currentSlide = (currentSlide + 1) % imagePaths.length;
+          updateSlides();
+        });
+        
+        // Auto advance slides every 5 seconds
+        slideInterval = setInterval(() => {
+          currentSlide = (currentSlide + 1) % imagePaths.length;
+          updateSlides();
+        }, 5000);
+        
+        // Pause auto-advance when hovering over the carousel
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.addEventListener('mouseenter', () => {
+          clearInterval(slideInterval);
+        });
+        
+        carouselContainer.addEventListener('mouseleave', () => {
+          slideInterval = setInterval(() => {
+            currentSlide = (currentSlide + 1) % imagePaths.length;
+            updateSlides();
+          }, 5000);
+        });
+        
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') {
+            currentSlide = (currentSlide - 1 + imagePaths.length) % imagePaths.length;
+            updateSlides();
+          } else if (e.key === 'ArrowRight') {
+            currentSlide = (currentSlide + 1) % imagePaths.length;
+            updateSlides();
+          }
+        });
+        
+        // Initialize the first slide
+        updateSlides();
+      }
+      
+      // Add swipe support for mobile devices
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      slidesContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, false);
+      
+      slidesContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, false);
+      
+      function handleSwipe() {
+        const swipeThreshold = 50; // Minimum distance for a swipe
+        
+        if (touchEndX < touchStartX - swipeThreshold) {
+          // Left swipe - next slide
+          nextBtn.click();
+        }
+        
+        if (touchEndX > touchStartX + swipeThreshold) {
+          // Right swipe - previous slide
+          prevBtn.click();
+        }
+      }
+      
+      // Monitor for new photos - check every 30 seconds
+      // Note: For GitHub Pages this is mainly useful during the same session
+      // if files are added via the repository
+      setInterval(() => {
+        fetch(photoIndexFile)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Photos index not available for refresh');
+            }
+            return response.json();
+          })
+          .then(data => {
+            if (Array.isArray(data) && 
+                (data.length > photos.length || 
+                 JSON.stringify(data) !== JSON.stringify(photos.map(p => p.replace(`${photoDirectory}/`, ''))))) {
+              // New or changed photos found, reload the carousel
+              photos = data.map(filename => `${photoDirectory}/${filename}`);
+              initializeCarousel(photos);
+            }
+          })
+          .catch(error => {
+            console.log('Photo refresh error:', error);
+            // Silent failure - keep the current photos
+          });
+      }, 30000);
+    });
+  </script>
 </body>
 
 </html>
